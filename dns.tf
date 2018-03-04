@@ -1,5 +1,6 @@
 resource "aws_route53_zone" "pcf_zone" {
   name = "${var.env_name}.${var.dns_suffix}"
+  vpc_id = "${aws_vpc.vpc.id}"
 
   tags {
     Name = "${var.env_name}-hosted-zone"
