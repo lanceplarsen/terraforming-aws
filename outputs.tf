@@ -34,9 +34,9 @@ output "optional_ops_manager_dns" {
   value = "${module.ops_manager.optional_dns}"
 }
 
-output "env_dns_zone_name_servers" {
-  value = "${aws_route53_zone.pcf_zone.name_servers}"
-}
+#output "env_dns_zone_name_servers" {
+#  value = "${aws_route53_zone.pcf_zone.name_servers}"
+#}
 
 output "sys_domain" {
   value = "sys.${var.env_name}.${var.dns_suffix}"
@@ -194,9 +194,9 @@ output "isoseg_ssl_private_key" {
   value     = "${length(var.isoseg_ssl_ca_cert) > 0 ? element(concat(tls_private_key.isoseg_ssl_private_key.*.private_key_pem, list("")), 0) : var.isoseg_ssl_private_key}"
 }
 
-output "dns_zone_id" {
-  value = "${aws_route53_zone.pcf_zone.id}"
-}
+#output "dns_zone_id" {
+#  value = "${aws_route53_zone.pcf_zone.id}"
+#}
 
 output "ops_manager_private_ip" {
   value = "${module.ops_manager.ops_manager_private_ip}"
