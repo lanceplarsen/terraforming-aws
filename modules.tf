@@ -1,8 +1,3 @@
-data "aws_route53_zone" "pcf_zone" {
-  name         = "hashidemos.io."
-}
-
-
 module "ops_manager" {
   source = "./ops_manager"
 
