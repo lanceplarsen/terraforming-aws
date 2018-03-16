@@ -1,3 +1,4 @@
+/*
 resource "aws_route53_zone" "pcf_zone" {
   name = "${var.env_name}.${var.dns_suffix}"
   vpc_id = "${aws_vpc.vpc.id}"
@@ -5,6 +6,11 @@ resource "aws_route53_zone" "pcf_zone" {
   tags {
     Name = "${var.env_name}-hosted-zone"
   }
+}
+*/
+
+data "aws_route53_zone" "pcf_zone" {
+  name         = "hashidemos.io."
 }
 
 resource "aws_route53_record" "wildcard_sys_dns" {
